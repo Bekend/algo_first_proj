@@ -16,3 +16,6 @@ The `main.py` script demonstrates the usage of these data structures through sim
 - Insertion, deletion, and traversal for BST.
 - Insertion and extraction for Heap.
 - Simple, modular code for easy readability and experimentation.
+
+
+# README.md is AI generated and also main.py is AI generated GUI 
