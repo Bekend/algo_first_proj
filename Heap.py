@@ -15,9 +15,8 @@ class MaxHeap:
         self.nodes = []
 
     #putting a new node in heap and fix structure
-    def insert(self, id, priority):
+        def insert(self, id, priority):
         new_node = HeapNode(id, priority)
-        tv = id - 1
         self.size += 1
 
         if self.root is None:
@@ -35,27 +34,11 @@ class MaxHeap:
             parent.right = new_node
 
         self.nodes.append(new_node)
-        self.bubbleup(new_node)
+        current = new_node
+        while current.parent is not None:
+            self.maxHeapify(current.parent)
+            current = current.parent
 
-    #used to push up the node
-    def bubbleup(self, node):
-        current = node
-        step = 0
-
-        while current.parent and current.priority > current.parent.priority:
-            parent = current.parent
-
-            current_id = current.id
-            current_priority = current.priority
-            parent_id = parent.id
-            parent_priority = parent.priority
-
-            current.id, parent.id = parent_id, current_id
-            current.priority, parent.priority = parent_priority, current_priority
-
-
-            current = parent
-            step += 1
 
 
     #grab the last node in the heap list
